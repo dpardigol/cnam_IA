@@ -49,7 +49,7 @@ def main():
     pmc = CustomEstimator(input_dim = 20,
                           output_dim = 6,
                           neurons_per_layer=100,
-                          num_layers=10,
+                          num_layers=3,
                           optimizer=keras.optimizers.SGD(learning_rate=0.1),
                           activation='relu',
                           epochs=30,
@@ -58,8 +58,6 @@ def main():
     print(pmc._model.summary())
     pmc.fit(X_train_pca,keras.utils.to_categorical(y_train_digits,6))
     pmc.score(X_test_pca,keras.utils.to_categorical(y_test_digits,6))
-    
-
 
 if __name__=='__main__':
     main()
